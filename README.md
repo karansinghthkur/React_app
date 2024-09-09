@@ -40,9 +40,9 @@ The main `App.js` component orchestrates these modules and manages the applicati
 
 ## How to Run the Project
 
-1. Clone the repository: git clone https://github.com/karansinghthkur/ReactChallenge.git
+1. Clone the repository: git clone https://github.com/karansinghthkur/React_app.git
 
-2. Navigate to the project directory:
+3. Navigate to the project directory:
 
 cd audio-streaming-app
 
