@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Audio Streaming React Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based audio streaming application that allows two users to stream audio between each other, apply audio filters, and visualize the audio stream in real-time.
 
-## Available Scripts
+## Project Overview
 
-In the project directory, you can run:
+The application consists of three main components:
 
-### `npm start`
+1. Audio Streaming: Enables peer-to-peer audio streaming using WebRTC.
+2. Audio Filter: Implements a basic frequency and gain filter on the audio stream.
+3. Audio Visualizer: Provides a real-time visualization of the audio stream as a waveform.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Approach
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The project was developed using a modular approach, with separate components for each major feature:
 
-### `npm test`
+1. `AudioStream.js`: Handles the WebRTC connection and audio streaming between peers.
+2. `AudioFilter.js`: Implements the audio filter using the Web Audio API.
+3. `AudioVisualizer.js`: Creates a real-time visualization of the audio stream using the Canvas API.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The main `App.js` component orchestrates these modules and manages the application state.
 
-### `npm run build`
+## Tools Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- React: For building the user interface and managing component state.
+- WebRTC: For peer-to-peer audio streaming.
+- Web Audio API: For implementing audio filters and processing.
+- Canvas API: For creating the audio visualization.
+- react-app-rewired: For overriding create-react-app configurations without ejecting.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Challenges Encountered
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. WebRTC Setup: Implementing the WebRTC connection process was challenging due to the complexity of signaling and ICE candidate exchange.
 
-### `npm run eject`
+2. Browser Compatibility: Ensuring consistent behavior across different browsers required additional testing and adjustments.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Real-time Audio Processing: Optimizing the audio filter and visualization for real-time performance while maintaining low latency was a significant challenge.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. State Management: Coordinating the state between different components (streaming, filter, and visualization) required careful planning to avoid conflicts and ensure smooth operation.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## How to Run the Project
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Clone the repository: git clone https://github.com/karansinghthkur/ReactChallenge.git
 
-## Learn More
+2. Navigate to the project directory:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+cd audio-streaming-app
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3. Install dependencies:
 
-### Code Splitting
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Start the development server:
 
-### Analyzing the Bundle Size
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+5. Open two browser windows and navigate to `http://localhost:3000` in one and `http://localhost:3000/#init` in the other.
 
-### Making a Progressive Web App
+6. Follow the on-screen instructions to connect the peers and start streaming audio.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Future Improvements
 
-### Advanced Configuration
+- Implement a signaling server for easier peer connection.
+- Add support for video streaming.
+- Enhance the audio filter with more options and a user-friendly interface.
+- Improve error handling and provide better user feedback for connection issues.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## License
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
